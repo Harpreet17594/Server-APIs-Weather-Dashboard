@@ -1,5 +1,5 @@
 //getting person name from buttons data-person
-var person = $(this).attr("data-person");
+// var person = $(this).attr("data-person");
 var searchButton = $("#searchButton");
 var searchInput = $("#searchInput");
 var searchInputValue = searchInput.val();
@@ -20,6 +20,8 @@ var queryURL =
 searchButton.on("click", function (event) {
   event.preventDefault();
 
+  $(".col-md-8").attr("style", "visibility: visible");
+  //getting input from user
   var searchInputValue = searchInput.val();
 
   // var queryURL =
@@ -80,22 +82,6 @@ searchButton.on("click", function (event) {
       for (var i = 0; i < 5; i++) {
         $("#date" + (i + 1)).text(data.list[i].dt_txt);
       }
-
-      //   document.getElementById("min" + (i + 1)).innerHTML =
-      //     "MINIMUM Temp = " + data.list[i].main.temp_min;
-      //   console.log(data.list[i].main.temp_min);
-      // }
-      // for (var i = 0; i < 5; i++) {
-      //   document.getElementById("max" + (i + 1)).innerHTML =
-      //     "MaxiMUM Temp = " + data.list[i].main.temp_max;
-      //   console.log(data.list[i].main.temp_max);
-      // }
-      // for (var i = 0; i < 5; i++) {
-      //   document.getElementById("img" + (i + 1)).src =
-      //     "http://openweathermap.org/img/w/" +
-      //     data.list[0].weather[0].icon +
-      //     ".png";
-      //   // console.log(data.list[i].main.temp_max);
     });
 });
 
@@ -130,4 +116,9 @@ $("#searchLondon").on("click", function (event) {
   event.preventDefault();
   searchInput.val("London");
   // console.log("val :" + val);
+});
+
+// window load
+window.addEventListener("load", function () {
+  $(".col-md-8").attr("style", "display: none;");
 });
