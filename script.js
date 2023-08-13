@@ -24,13 +24,6 @@ searchButton.on("click", function (event) {
   //getting input from user
   var searchInputValue = searchInput.val();
 
-  // var queryURL =
-  //   "https://api.openweathermap.org/data/2.5/forecast?q=" +
-  //   searchInputValue +
-  //   "&appid=120a97503c000275bcef2054f21605b7";
-
-  // console.log(searchInputValue);
-
   fetch(
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
       searchInputValue +
